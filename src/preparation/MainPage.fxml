@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="preparation.MainPageController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="343.0">
+         <children>
+            <TableView fx:id="tblPersons" prefHeight="375.0" prefWidth="294.0">
+              <columns>
+                <TableColumn fx:id="colPrename" prefWidth="75.0" text="Prename" />
+                <TableColumn fx:id="colLastname" prefWidth="75.0" text="Lastname" />
+                  <TableColumn fx:id="colBirthdate" prefWidth="75.0" text="Birthdate" />
+                  <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleBtn_delete" prefHeight="26.0" prefWidth="78.0" text="Delete" />
+               </children></HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="256.0" spacing="20.0">
+         <children>
+            <TextField fx:id="tfPrename" promptText="Prename" />
+            <TextField fx:id="tfLastname" promptText="Lastname" />
+            <DatePicker fx:id="dpBirthdate" prefHeight="26.0" prefWidth="256.0" promptText="Birthdate" />
+            <CheckBox fx:id="cbStatus" mnemonicParsing="false" text="Online" />
+            <Button mnemonicParsing="false" onAction="#handleBtn_save" prefHeight="26.0" prefWidth="85.0" text="Save" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</HBox>
