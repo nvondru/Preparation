@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -55,6 +57,9 @@ public class Person implements Serializable {
     @Basic(optional = false)
     @Column(name = "online")
     private short online;
+    @JoinColumn(name = "fk_position", referencedColumnName = "id")
+    @ManyToOne
+    private Position fkPosition;
 
     public Person() {
     }
@@ -109,6 +114,14 @@ public class Person implements Serializable {
 
     public void setOnline(short online) {
         this.online = online;
+    }
+
+    public Position getFkPosition() {
+        return fkPosition;
+    }
+
+    public void setFkPosition(Position fkPosition) {
+        this.fkPosition = fkPosition;
     }
 
     @Override

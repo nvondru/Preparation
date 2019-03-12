@@ -60,6 +60,25 @@ public class DBQuery {
         closeConnection();
     }
     
+    public void insertPosition(Position position){
+        openConnection();
+        System.out.println("active...");
+        em.persist(position);
+        closeConnection();
+    }
+    
+    public List getAllPositions(){
+        openConnection();
+        List positions = em.createNamedQuery("Position.findAll").getResultList();
+        closeConnection();
+        return positions;
+    }
+    public void deletePosition(Position position){
+        openConnection();
+        em.remove(position);
+        closeConnection();
+    }
+    
     
     
 }

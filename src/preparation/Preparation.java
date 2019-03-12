@@ -27,6 +27,7 @@ public class Preparation extends Application {
         
         MainPageController controller = loader.getController();
         controller.setMain(this);
+        controller.openView_overview(null);
         
         
         Scene scene = new Scene(root);
